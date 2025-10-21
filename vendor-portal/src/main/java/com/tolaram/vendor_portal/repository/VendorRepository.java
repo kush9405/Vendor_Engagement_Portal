@@ -9,7 +9,7 @@ public interface VendorRepository extends MongoRepository<Vendor, String> {
     // You can define custom queries just by naming the method.
     // Spring Data will automatically implement this for you.
     // For example, to find all vendors in a specific bucket:
-    List<Vendor> findByEngagementStatus(Vendor.EngagementStatus status);
+    List<Vendor> findByEngagementStatus(Vendor.EngagementStatus engagementStatus);
 
     // Find a vendor by its company name (case-insensitive)
     Vendor findByCompanyNameIgnoreCase(String companyName);

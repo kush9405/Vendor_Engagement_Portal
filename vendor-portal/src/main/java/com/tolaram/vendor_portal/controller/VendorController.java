@@ -55,4 +55,18 @@ public class VendorController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    // PUT endpoint to update an entire vendor
+    @PutMapping("/{id}")
+    public ResponseEntity<Vendor> updateVendor(@PathVariable String id, @RequestBody Vendor vendorDetails) {
+        return vendorRepository.findById(id).map(vendor -> {
+            vendor.setCompanyName(vendorDetails.getCompanyName());
+            vendor.setPrimaryContactName(vendorDetails.getPrimaryContactName());
+            vendor.setPrimaryContactEmail(vendorDetails.getPrimaryContactEmail());
+            vendor.setCategory(vendorDetails.getCategory());
+            vendor.setEngagementStatus(vendorDetails.getEngagementStatus());
+            // You can add more fields to update here
+            Vendor updatedVendor = vendorRepository.save(vendor);
+            return new ResponseEntity<>(updatedVendor, HttpStatus.OK);
+        }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
 }

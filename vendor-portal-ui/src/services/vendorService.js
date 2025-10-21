@@ -12,8 +12,22 @@ const createVendor = (vendorData) => {
 };
 
 // You can add more functions here for update, delete, etc.
+// ... existing functions
+
+const getVendorById = (id) => {
+    return axios.get(`${API_URL}/${id}`);
+};
+
+const updateVendorStatus = (id, newStatus) => {
+    // Note: This endpoint specific to status update is what we created first
+    return axios.put(`${API_URL}/${id}/status`, newStatus, {
+        headers: { 'Content-Type': 'application/json' }
+    });
+};
 
 export default {
     getAllVendors,
-    createVendor
+    createVendor,
+    getVendorById,
+    updateVendorStatus // export the new function
 };
