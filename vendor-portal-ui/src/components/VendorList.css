@@ -1,35 +1,92 @@
 .vendor-list-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    max-width: 1100px;
+    margin: 36px auto 0 auto;
+    background: #fff;
+    padding: 28px 26px;
+    box-shadow: 0 4px 32px rgba(46, 62, 102, 0.10), 0 1.5px 4px rgba(60,80,120,0.07);
+    border-radius: 14px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    min-height: 320px;
 }
 
 .vendor-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fcfcfc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5px 3px rgba(0,0,0,0.03);
 }
 
 .vendor-table th, .vendor-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 14px 18px;
     text-align: left;
 }
 
 .vendor-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
+    background-color: #f6f9fc;
+    font-weight: 700;
+    font-size: 1.04rem;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid #e1e7ec;
+    color: #374151;
+}
+
+.vendor-table tr:nth-child(even) {
+    background-color: #f9fbfd;
+}
+
+.vendor-table tr:hover {
+    background: #eaf6ff;
+    transition: background 0.18s;
+}
+
+.vendor-table td {
+    border-bottom: 1px solid #ebeeef;
+    font-size: 1.02rem;
+    color: #232b33;
+    vertical-align: middle;
 }
 
 .status-badge {
-    padding: 5px 10px;
-    border-radius: 12px;
-    color: white;
-    font-size: 0.9em;
-    text-transform: capitalize;
+    padding: 7px 18px;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 0.98em;
+    font-weight: 600;
+    box-shadow: 0 1.5px 6px rgba(0,0,0,0.07);
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 0.5px;
 }
 
-.status-yet-to-respond { background-color: #f0ad4e; } /* Orange */
-.status-in-progress { background-color: #0275d8; } /* Blue */
-.status-onboarded { background-color: #5cb85c; } /* Green */
-.error-message { color: red; font-weight: bold; }
+.status-yet-to-respond { background-color: #ffc107; color: #232b33; }
+.status-in-progress { background-color: #2196f3; }
+.status-onboarded { background-color: #43b77a; }
+.status-completed-onboarded { background-color: #43b77a; }
+
+.error-message {
+    color: #d32727;
+    background: #ffeeee;
+    font-weight: 600;
+    padding: 9px 12px;
+    border-radius: 6px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 1em;
+}
+
+@media (max-width: 800px) {
+    .vendor-list-container {
+        padding: 16px 2px;
+    }
+    .vendor-table th, .vendor-table td {
+        padding: 10px 7px;
+        font-size: 1em;
+    }
+    .status-badge {
+        padding: 6px 10px;
+        font-size: 0.95em;
+    }
+}

@@ -1,32 +1,89 @@
 .add-vendor-form-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    background-color: #f9f9f9;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(46, 62, 102, 0.12), 0 2px 8px rgba(60, 80, 120, 0.09);
+    border: none;
+    transition: box-shadow 0.2s;
 }
+
+.add-vendor-form-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #063970;
+    letter-spacing: 1px;
+}
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
 }
+
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #393e46;
 }
+
 .form-group input, .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 90%;
+    padding: 12px;
+    border: 1.5px solid #bfcde0;
+    border-radius: 6px;
+    background: #f3f6fa;
+    font-size: 1.12rem;
+    outline: none;
+    transition: border-color 0.2s;
 }
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #0f8ad2;
+    background: #e9f4fc;
+}
+
 button {
-    padding: 10px 15px;
-    background-color: #28a745;
+    margin: 0 auto;
+    display: block;
+    padding: 12px 38px;
+    background: linear-gradient(90deg, #46ae27, #2196f3);
     color: white;
+    font-size: 1.08rem;
+    font-weight: 700;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.12);
     cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
 }
+
+button:hover:not(:disabled) {
+    background: linear-gradient(90deg, #2196f3, #27ae60);
+    box-shadow: 0 4px 16px rgba(33,150,243,0.16);
+}
+
 button:disabled {
-    background-color: #ccc;
+    background: #bfcde0;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #d83737;
+    font-size: 1rem;
+    margin-top: 16px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .add-vendor-form-container {
+        padding: 16px 8px;
+        border-radius: 8px;
+    }
+    .add-vendor-form-container h2 {
+        font-size: 1.3rem;
+    }
 }
