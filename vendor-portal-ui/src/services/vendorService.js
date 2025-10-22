@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // React uses environment variables prefixed with REACT_APP_
 // Vercel will provide this variable during its build process.
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api/vendors';
 
 const getAllVendors = () => {
     return axios.get(`${API_URL}/vendors`);
@@ -27,4 +27,9 @@ const updateVendorStatus = (id, newStatus) => {
 // Example in VendorDetail.js:
 // axios.post(`${process.env.REACT_APP_API_URL}/files/upload`, formData, ...);
 
-export default { /* ... */ };
+export default {
+    getAllVendors,
+    createVendor,
+    getVendorById,
+    updateVendorStatus
+};
