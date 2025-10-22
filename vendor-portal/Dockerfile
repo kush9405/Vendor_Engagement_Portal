@@ -1,6 +1,7 @@
 # Stage 1: Build the application using Maven
 # Use a specific, stable version for reproducible builds
-FROM maven:3.8.6-openjdk-17 AS build
+# FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.6-eclipse-temurin-17 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
