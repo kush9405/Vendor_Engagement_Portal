@@ -35,5 +35,5 @@ export default {
     createVendor,
     getVendorById,
     updateVendorStatus,
-    deleteVendorById
+    deleteVendor
 };
