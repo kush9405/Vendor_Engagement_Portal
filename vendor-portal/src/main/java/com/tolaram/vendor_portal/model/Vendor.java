@@ -6,12 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-// Lombok annotation to reduce boilerplate code
+
 import lombok.Data;
 
-// This annotation specifies the collection name in MongoDB
 @Document(collection = "VendorInformation")
-@Data // Creates getters, setters, constructors, etc. automatically
+@Data
 public class Vendor {
 
     @Id

@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/vendors") // Base URL for all endpoints in this controller
-@CrossOrigin(origins = "https://vendor-engagement-portal.vercel.app/") // Allows requests from your React app
+@CrossOrigin(origins = "https://vendor-engagement-portal.vercel.app/") // Allows requests from  React app
 public class VendorController {
 
     @Autowired // Spring automatically injects the repository instance
@@ -27,7 +27,6 @@ public class VendorController {
         return new ResponseEntity<>(savedVendor, HttpStatus.CREATED);
     }
 
-    // GET endpoint to find a single vendor by its ID
     @GetMapping("/{id}")
     public ResponseEntity<Vendor> getVendorById(@PathVariable String id) {
         return vendorRepository.findById(id)
@@ -35,7 +34,7 @@ public class VendorController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    // PUT endpoint to update a vendor's status (or any other field)
+
     @PutMapping("/{id}/status")
     public ResponseEntity<Vendor> updateVendorStatus(@PathVariable String id, @RequestBody Vendor.EngagementStatus newStatus) {
         return vendorRepository.findById(id).map(vendor -> {
@@ -45,7 +44,6 @@ public class VendorController {
         }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    // DELETE endpoint to remove a vendor
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteVendor(@PathVariable String id) {
         try {
@@ -55,7 +53,7 @@ public class VendorController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    // PUT endpoint to update an entire vendor
+
     @PutMapping("/{id}")
     public ResponseEntity<Vendor> updateVendor(@PathVariable String id, @RequestBody Vendor vendorDetails) {
         return vendorRepository.findById(id).map(vendor -> {
@@ -64,7 +62,6 @@ public class VendorController {
             vendor.setPrimaryContactEmail(vendorDetails.getPrimaryContactEmail());
             vendor.setCategory(vendorDetails.getCategory());
             vendor.setEngagementStatus(vendorDetails.getEngagementStatus());
-            // You can add more fields to update here
             Vendor updatedVendor = vendorRepository.save(vendor);
             return new ResponseEntity<>(updatedVendor, HttpStatus.OK);
         }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

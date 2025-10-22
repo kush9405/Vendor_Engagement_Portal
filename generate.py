@@ -76,7 +76,7 @@ def save_to_csv(data, filename="sample_fmcg_vendors.csv"):
 # --- Main execution ---
 if __name__ == "__main__":
     # Specify the number of sample vendor records you want to generate
-    number_of_vendors_to_generate = 500
+    number_of_vendors_to_generate = 50
     
     # Generate the data
     generated_vendors = generate_vendor_data(number_of_vendors_to_generate)

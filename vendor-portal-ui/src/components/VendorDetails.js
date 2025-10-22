@@ -24,18 +24,15 @@ const VendorDetail = () => {
 
     const handleStatusChange = (e) => {
         const newStatus = e.target.value;
-        // Optimistically update the UI
         setVendor({ ...vendor, engagementStatus: newStatus }); 
 
         vendorService.updateVendorStatus(id, newStatus)
             .then(response => {
-                // If successful, the UI is already updated. Maybe show a success message.
+                
                 console.log("Status updated!", response.data);
             })
             .catch(err => {
-                // If it fails, revert the change and show an error
                 alert("Failed to update status!");
-                // (You would add logic here to revert the vendor state)
             });
     };
 
@@ -60,7 +57,6 @@ const VendorDetail = () => {
                     </select>
                 </div>
             </div>
-            {/* Document Management section will go here in the next phase */}
         </div>
     );
 };

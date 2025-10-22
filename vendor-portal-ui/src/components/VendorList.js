@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom'; 
 import './VendorList.css';
 
 const VendorList = ({ vendors = [], loading, error, onDelete }) => {
@@ -13,17 +13,14 @@ const VendorList = ({ vendors = [], loading, error, onDelete }) => {
       .finally(() => setDeletingId(null));
   };
 
-  // Display a loading message while data is being fetched.
   if (loading) {
     return <div>Loading vendors...</div>;
   }
   
-  // Display an error message if the data fetch fails.
   if (error) {
     return <div className="error-message">{error}</div>;
   }
 
-  // Helper function to determine the CSS class for the status badge based on the vendor's status.
   const getStatusClass = (status) => {
     switch (status) {
       case 'YET_TO_RESPOND':
@@ -51,11 +48,9 @@ const VendorList = ({ vendors = [], loading, error, onDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {/* Check if there are any vendors to display. If not, show a message. */}
           {vendors.length > 0 ? vendors.map(vendor => (
             <tr key={vendor.id}>
               <td>
-                {/* Each company name is a link to its detailed view. */}
                 <Link to={`/vendor/${vendor.id}`}>
                   {vendor.companyName}
                 </Link>
@@ -63,14 +58,12 @@ const VendorList = ({ vendors = [], loading, error, onDelete }) => {
               <td>{vendor.primaryContactName}</td>
               <td>{vendor.category}</td>
               <td>
-                {/* The status is displayed as a colored badge for quick visual identification. */}
                 <span className={`status-badge ${getStatusClass(vendor.engagementStatus)}`}>
                   {vendor.engagementStatus.replace(/_/g, ' ')}
                 </span>
               </td>
               <td>
                 <div className="vendor-actions">
-                  {/* other action buttons can live here */}
                   <button
                     className="delete-button"
                     onClick={() => handleDelete(vendor)}

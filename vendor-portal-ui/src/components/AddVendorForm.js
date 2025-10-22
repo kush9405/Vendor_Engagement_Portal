@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import vendorService from '../services/vendorService';
 import './AddVendorForm.css';
 
-// The 'onVendorAdded' prop is a function we'll pass from the parent 
-// to let it know when to refresh the vendor list.
 const AddVendorForm = ({ onVendorAdded }) => {
     const [companyName, setCompanyName] = useState('');
     const [primaryContactName, setPrimaryContactName] = useState('');
@@ -29,11 +27,9 @@ const AddVendorForm = ({ onVendorAdded }) => {
         vendorService.createVendor(newVendor)
             .then(response => {
                 alert(`Vendor "${response.data.companyName}" created successfully!`);
-                // Clear the form
                 setCompanyName('');
                 setPrimaryContactName('');
                 setPrimaryContactEmail('');
-                // Notify the parent component to refresh the list
                 if (onVendorAdded) {
                     onVendorAdded();
                 }

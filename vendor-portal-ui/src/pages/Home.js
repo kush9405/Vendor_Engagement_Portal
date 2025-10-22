@@ -26,7 +26,7 @@ const Home = () => {
     vendorService.deleteVendorById(id)
       .then(() => {
         alert("Vendor deleted successfully.");
-        fetchVendors(); // Refresh the list after deletion
+        fetchVendors(); 
       })
       .catch(error => {
         console.error("Error deleting vendor:", error);
@@ -34,18 +34,16 @@ const Home = () => {
       });
   };
 
-  // Fetch data on initial component mount
   useEffect(() => {
     fetchVendors();
   }, []);
-  // ... (copy all the state and fetchVendors logic from the old App.js here)
+
 
 
   return (
     <>
       {/* <h1>Vendor Engagement Portal</h1> */}
       <AddVendorForm onVendorAdded={fetchVendors} />
-      {/* pass the delete handler down to the list */}
       <VendorList vendors={vendors} loading={loading} error={error} onDelete={deleteVendorById} />
     </>
   );
