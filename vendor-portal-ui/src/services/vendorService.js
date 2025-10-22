@@ -12,12 +12,13 @@ const getAllVendors = () => {
 const createVendor = (vendorData) => {
     return axios.post(`${API_URL}/vendors`, vendorData);
 };
-const deleteVendor = (vendorData) => {
-    return axios.delete(`${API_URL}/vendors`, vendorData);
-};
+
 
 const getVendorById = (id) => {
     return axios.get(`${API_URL}/vendors/${id}`);
+};
+const deleteVendorById = (id) => {
+    return axios.delete(`${API_URL}/vendors/${id}`);
 };
 
 const updateVendorStatus = (id, newStatus) => {
@@ -35,5 +36,5 @@ export default {
     createVendor,
     getVendorById,
     updateVendorStatus,
-    deleteVendor
+    deleteVendorById
 };
