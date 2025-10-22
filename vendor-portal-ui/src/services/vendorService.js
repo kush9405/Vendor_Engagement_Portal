@@ -1,38 +1,30 @@
 import axios from 'axios';
 
-// The base URL of your Spring Boot backend
-const API_URL = 'http://localhost:8080/api/vendors';
+// React uses environment variables prefixed with REACT_APP_
+// Vercel will provide this variable during its build process.
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
 
 const getAllVendors = () => {
-    return axios.get(API_URL);
+    return axios.get(`${API_URL}/vendors`);
 };
 
+// Update other functions to use the new base URL format
 const createVendor = (vendorData) => {
-    return axios.post(API_URL, vendorData);
+    return axios.post(`${API_URL}/vendors`, vendorData);
 };
-
-// You can add more functions here for update, delete, etc.
-// ... existing functions
 
 const getVendorById = (id) => {
-    return axios.get(`${API_URL}/${id}`);
-};
-
-const deleteVendorById = (id) => {
-    return axios.delete(`${API_URL}/${id}`);
+    return axios.get(`${API_URL}/vendors/${id}`);
 };
 
 const updateVendorStatus = (id, newStatus) => {
-    // Note: This endpoint specific to status update is what we created first
-    return axios.put(`${API_URL}/${id}/status`, newStatus, {
+    return axios.put(`${API_URL}/vendors/${id}/status`, newStatus, {
         headers: { 'Content-Type': 'application/json' }
     });
 };
 
-export default {
-    getAllVendors,
-    createVendor,
-    getVendorById,
-    updateVendorStatus,
-    deleteVendorById
-};
+// ALSO update your file upload logic to use the variable!
+// Example in VendorDetail.js:
+// axios.post(`${process.env.REACT_APP_API_URL}/files/upload`, formData, ...);
+
+export default { /* ... */ };
