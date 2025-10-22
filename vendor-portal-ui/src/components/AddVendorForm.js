@@ -72,7 +72,7 @@ const AddVendorForm = ({ onVendorAdded }) => {
                         <option>Marketing</option>
                     </select>
                 </div>
-                <button type="submit" disabled={submitting}>
+                <button type="submit" className="submit" disabled={submitting}>
                     {submitting ? 'Submitting...' : 'Add Vendor'}
                 </button>
                 {error && <p className="error-message">{error}</p>}

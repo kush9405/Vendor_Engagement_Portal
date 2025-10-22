@@ -18,6 +18,10 @@ const getVendorById = (id) => {
     return axios.get(`${API_URL}/${id}`);
 };
 
+const deleteVendorById = (id) => {
+    return axios.delete(`${API_URL}/${id}`);
+};
+
 const updateVendorStatus = (id, newStatus) => {
     // Note: This endpoint specific to status update is what we created first
     return axios.put(`${API_URL}/${id}/status`, newStatus, {
@@ -29,5 +33,6 @@ export default {
     getAllVendors,
     createVendor,
     getVendorById,
-    updateVendorStatus // export the new function
+    updateVendorStatus,
+    deleteVendorById
 };

@@ -46,7 +46,7 @@
     background: #e9f4fc;
 }
 
-button {
+.submit {
     margin: 0 auto;
     display: block;
     padding: 12px 38px;

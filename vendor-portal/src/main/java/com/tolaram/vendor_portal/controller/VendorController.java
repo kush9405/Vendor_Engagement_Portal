@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/vendors") // Base URL for all endpoints in this controller
-@CrossOrigin(origins = "http://localhost:3000") // Allows requests from your React app
+@CrossOrigin(origins = "*") // Allows requests from your React app
 public class VendorController {
 
     @Autowired // Spring automatically injects the repository instance
