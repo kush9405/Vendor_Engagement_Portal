@@ -36,16 +36,24 @@ const Home = () => {
       });
   };
 
-  // New: update vendor status handler
+  // <-- changed: optimistic update so other fields are not lost and UI is snappy
   const updateVendorStatus = (id, newStatus) => {
-    // expects vendorService.updateVendorStatus(id, body) to exist
-    return vendorService.updateVendorStatus(id,  newStatus)
+    const prevVendors = vendors;
+    setVendors(v => v.map(item => {
+      const itemId = item.id || item._id;
+      return itemId === id ? { ...item, engagementStatus: newStatus } : item;
+    }));
+
+    return vendorService.updateVendorStatus(id, newStatus)
       .then(() => {
-        // refresh list to reflect server state
-        fetchVendors();
+        // success: we already updated UI optimistically
+        return;
       })
       .catch(error => {
+        // rollback on error
+        setVendors(prevVendors);
         console.error('Error updating vendor status:', error);
+        alert('Failed to update status. Changes have been reverted.');
         throw error;
       });
   };
