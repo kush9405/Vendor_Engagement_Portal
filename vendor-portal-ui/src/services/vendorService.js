@@ -19,7 +19,7 @@ const deleteVendorById = (id) => {
 };
 
 const updateVendorStatus = (id, newStatus) => {
-    return axios.put(`${API_URL}/vendors/${id}`, newStatus);
+    return axios.put(`${API_URL}/vendors/${id}`,{engagementStatus: newStatus});
 };
 
 // Example in VendorDetail.js:

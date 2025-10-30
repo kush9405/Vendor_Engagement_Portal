@@ -28,7 +28,6 @@ const VendorDetail = () => {
 
         vendorService.updateVendorStatus(id, newStatus)
             .then(response => {
-                
                 console.log("Status updated!", response.data);
             })
             .catch(err => {
