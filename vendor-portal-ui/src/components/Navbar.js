@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import './Navbar.css';
-import logo from '../assets/vendor-portal-ui/src/assets/Tolaram-logo-white-inflection-red.png';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -10,7 +8,7 @@ const Navbar = () => {
       <div className="vp-navbar-inner">
         <div className="vp-brand">
           {/* Replace with <img src="/logo.png" alt="Tolaram" /> if you have an image in public/ */}
-          <img src={logo} alt="Tolaram" className="vp-logo-image" />
+          <img src="/Tolaram-logo-white-inflection-red.png" alt="Tolaram" className="vp-logo-image" />
           <span className="vp-logo-text"></span>
         </div>
 
