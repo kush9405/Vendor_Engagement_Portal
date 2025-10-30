@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   const deleteVendorById = (id) => {
-    vendorService.deleteVendorById(id)
+    return vendorService.deleteVendorById(id)
       .then(() => {
         alert("Vendor deleted successfully.");
         fetchVendors(); 
@@ -32,6 +32,21 @@ const Home = () => {
       .catch(error => {
         console.error("Error deleting vendor:", error);
         alert("Failed to delete vendor. Please try again.");
+        throw error;
+      });
+  };
+
+  // New: update vendor status handler
+  const updateVendorStatus = (id, newStatus) => {
+    // expects vendorService.updateVendorStatus(id, body) to exist
+    return vendorService.updateVendorStatus(id, { engagementStatus: newStatus })
+      .then(() => {
+        // refresh list to reflect server state
+        fetchVendors();
+      })
+      .catch(error => {
+        console.error('Error updating vendor status:', error);
+        throw error;
       });
   };
 
@@ -39,14 +54,17 @@ const Home = () => {
     fetchVendors();
   }, []);
 
-
-
   return (
     <>
-      {/* <h1>Vendor Engagement Portal</h1> */}
       <Navbar />
       <AddVendorForm onVendorAdded={fetchVendors} />
-      <VendorList vendors={vendors} loading={loading} error={error} onDelete={deleteVendorById} />
+      <VendorList
+        vendors={vendors}
+        loading={loading}
+        error={error}
+        onDelete={deleteVendorById}
+        onUpdateStatus={updateVendorStatus}
+      />
     </>
   );
 };
