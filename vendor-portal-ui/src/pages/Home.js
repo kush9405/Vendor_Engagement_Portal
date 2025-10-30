@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import VendorList from '../components/VendorList';
 import AddVendorForm from '../components/AddVendorForm';
 import vendorService from '../services/vendorService';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   const [vendors, setVendors] = useState([]);
@@ -43,6 +44,7 @@ const Home = () => {
   return (
     <>
       {/* <h1>Vendor Engagement Portal</h1> */}
+      <Navbar />
       <AddVendorForm onVendorAdded={fetchVendors} />
       <VendorList vendors={vendors} loading={loading} error={error} onDelete={deleteVendorById} />
     </>
