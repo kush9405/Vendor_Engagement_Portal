@@ -39,7 +39,7 @@ const Home = () => {
   // New: update vendor status handler
   const updateVendorStatus = (id, newStatus) => {
     // expects vendorService.updateVendorStatus(id, body) to exist
-    return vendorService.updateVendorStatus(id, { engagementStatus: newStatus })
+    return vendorService.updateVendorStatus(id,  newStatus)
       .then(() => {
         // refresh list to reflect server state
         fetchVendors();
