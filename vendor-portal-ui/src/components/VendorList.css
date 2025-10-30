@@ -112,7 +112,7 @@
 }
 
 /* Colors mapped to status */
-.status-yet-to-respond .status-indicator,
+/* .status-yet-to-respond .status-indicator,
 .status-indicator.status-yet-to-respond,.status-cell {
   background: linear-gradient(180deg, #f7d87f, #f4c542);
   border: 1px solid rgba(0,0,0,0.06);
@@ -126,12 +126,12 @@
 .status-indicator.status-onboarded,.status-cell {
   background: linear-gradient(180deg, #7ce3ad, #39b67a);
   border: 1px solid rgba(0,0,0,0.06);
-}
+} */
 
 /* If you want the select border to pick the color too, add modifier classes on the cell */
-.status-cell.status-yet-to-respond .status-select { background: #f4c542; }
-.status-cell.status-in-progress .status-select { background: #2f8ef3; }
-.status-cell.status-onboarded .status-select { background: #39b67a; }
+.status-cell.status-yet-to-respond .status-select { background: #f4c542;color: white; }
+.status-cell.status-in-progress .status-select { background: #2f8ef3;color: white; }
+.status-cell.status-onboarded .status-select { background: #39b67a; color: white;}
 
 /* small loading text */
 .status-loading {
