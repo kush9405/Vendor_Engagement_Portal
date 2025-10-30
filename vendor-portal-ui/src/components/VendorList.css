@@ -77,6 +77,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  color:white;
 }
 
 /* nicer select appearance */
@@ -128,9 +129,9 @@
 }
 
 /* If you want the select border to pick the color too, add modifier classes on the cell */
-.status-cell.status-yet-to-respond .status-select { border-color: #f4c542; }
-.status-cell.status-in-progress .status-select { border-color: #2f8ef3; }
-.status-cell.status-onboarded .status-select { border-color: #39b67a; }
+.status-cell.status-yet-to-respond .status-select { background: #f4c542; }
+.status-cell.status-in-progress .status-select { background: #2f8ef3; }
+.status-cell.status-onboarded .status-select { background: #39b67a; }
 
 /* small loading text */
 .status-loading {
