@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import VendorDetails from './components/VendorDetails';
 import './App.css';
-import Home from './pages/home';
+import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import OurBusiness from './pages/OurBusiness';
 import OurImpact from './pages/OurImpact';
