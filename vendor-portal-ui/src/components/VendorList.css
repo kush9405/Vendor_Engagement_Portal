@@ -112,17 +112,17 @@
 
 /* Colors mapped to status */
 .status-yet-to-respond .status-indicator,
-.status-indicator.status-yet-to-respond {
+.status-indicator.status-yet-to-respond,.status-cell {
   background: linear-gradient(180deg, #f7d87f, #f4c542);
   border: 1px solid rgba(0,0,0,0.06);
 }
 .status-in-progress .status-indicator,
-.status-indicator.status-in-progress {
+.status-indicator.status-in-progress,.status-cell {
   background: linear-gradient(180deg, #6fb2ff, #2f8ef3);
   border: 1px solid rgba(0,0,0,0.06);
 }
 .status-onboarded .status-indicator,
-.status-indicator.status-onboarded {
+.status-indicator.status-onboarded,.status-cell {
   background: linear-gradient(180deg, #7ce3ad, #39b67a);
   border: 1px solid rgba(0,0,0,0.06);
 }

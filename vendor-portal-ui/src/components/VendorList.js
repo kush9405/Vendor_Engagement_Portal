@@ -102,7 +102,7 @@ const VendorList = ({ vendors = [], loading, error, onDelete, onUpdateStatus }) 
                     </select>
 
                     {/* colored indicator */}
-                    <span className={`status-indicator ${getStatusClass(vendor.engagementStatus)}`} aria-hidden="true" />
+                    {/* <span className={`status-indicator ${getStatusClass(vendor.engagementStatus)}`} aria-hidden="true" /> */}
 
                     {updatingId === id && <span className="status-loading">Updating…</span>}
                   </div>
