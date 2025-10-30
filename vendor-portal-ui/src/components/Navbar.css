@@ -1,49 +1,54 @@
-/* Basic styles to match the red header look in your screenshot */
+/* Improved sizing, alignment and responsive behaviour */
+
 .vp-navbar {
-  background: #e4002b; /* deep red */
+  background: #e4002b;
   color: #fff;
   width: 100%;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 50;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
 .vp-navbar-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
 
 /* Brand */
 .vp-brand {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
 }
-.vp-logo-text {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 34px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.5px;
+.vp-logo-image {
+  display: block;
+  max-height: 56px;    /* prevent huge logo */
+  width: auto;
+  object-fit: contain;
 }
 
-/* Desktop nav */
+/* Navigation */
 .vp-nav {
   display: flex;
   gap: 28px;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;      /* take remaining space so links stay to the right */
+  min-width: 0;        /* allow truncation if needed */
 }
 .vp-nav-link {
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.95);
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.6px;
   padding: 8px 0;
   position: relative;
+  white-space: nowrap; /* keep each link on one line */
 }
 .vp-nav-link:hover,
 .vp-nav-link.active {
@@ -61,24 +66,13 @@
   left: 0;
 }
 
-/* Actions: search and hamburger */
+/* Actions: hamburger on small screens */
 .vp-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 0 0 auto;
 }
-.vp-search-btn {
-  background: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-}
-.vp-search-btn svg { opacity: 0.95; }
-
-/* hamburger for small screens */
 .vp-hamburger {
   display: none;
   background: transparent;
@@ -94,26 +88,25 @@
   margin: 3px 0;
 }
 
-/* Mobile menu */
+/* Mobile menu (hidden by default) */
 .vp-mobile-menu {
   display: none;
+  background: rgba(0,0,0,0.03);
+  padding: 10px 20px 18px;
+}
+.vp-mobile-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 860px) {
   .vp-nav { display: none; }
   .vp-hamburger { display: inline-block; }
-  .vp-mobile-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px 20px 16px;
-    max-width: 100%;
-  }
-  .vp-mobile-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 0;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
+  .vp-mobile-menu { display: block; }
+  .vp-navbar-inner { padding: 10px 14px; }
+  .vp-logo-image { max-height: 48px; }
 }
