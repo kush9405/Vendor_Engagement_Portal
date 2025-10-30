@@ -72,32 +72,67 @@
     letter-spacing: 0.5px;
 }
 
-/* small colored rectangle to the right of the select */
+/* Status cell layout */
 .status-cell {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
 }
+
+/* nicer select appearance */
 .status-select {
-  padding: 6px 8px;
-  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  border: 1px solid #d1d7dc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #222;
+  min-width: 200px;
+  box-shadow: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.status-select:focus {
+  outline: none;
+  border-color: rgba(50,115,220,0.9);
+  box-shadow: 0 0 0 4px rgba(50,115,220,0.08);
 }
 
-/* indicator */
+/* the colored pill to the right */
 .status-indicator {
   width: 18px;
   height: 18px;
-  border-radius: 3px;
+  border-radius: 4px;
   display: inline-block;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
+  flex: 0 0 auto;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset;
 }
 
-/* colours */
-.status-yet-to-respond { background: #f4c542; }   /* amber */
-.status-in-progress { background: #2f8ef3; }     /* blue */
-.status-onboarded { background: #39b67a; }       /* green */
+/* Colors mapped to status */
+.status-yet-to-respond .status-indicator,
+.status-indicator.status-yet-to-respond {
+  background: linear-gradient(180deg, #f7d87f, #f4c542);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.status-in-progress .status-indicator,
+.status-indicator.status-in-progress {
+  background: linear-gradient(180deg, #6fb2ff, #2f8ef3);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.status-onboarded .status-indicator,
+.status-indicator.status-onboarded {
+  background: linear-gradient(180deg, #7ce3ad, #39b67a);
+  border: 1px solid rgba(0,0,0,0.06);
+}
 
-/* loading text */
+/* If you want the select border to pick the color too, add modifier classes on the cell */
+.status-cell.status-yet-to-respond .status-select { border-color: #f4c542; }
+.status-cell.status-in-progress .status-select { border-color: #2f8ef3; }
+.status-cell.status-onboarded .status-select { border-color: #39b67a; }
+
+/* small loading text */
 .status-loading {
   font-size: 12px;
   color: #666;
