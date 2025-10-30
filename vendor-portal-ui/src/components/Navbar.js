@@ -9,12 +9,13 @@ const Navbar = () => {
       <div className="vp-navbar-inner">
         <div className="vp-brand">
           {/* Replace with <img src="/logo.png" alt="Tolaram" /> if you have an image in public/ */}
-          <span className="vp-logo-text">Tolaram</span>
+          <img src="vendor-portal-ui/src/Tolaram-logo-white-inflection-red.png" alt="Tolaram" className="vp-logo-image" />
+          <span className="vp-logo-text"></span>
         </div>
 
         <nav className={`vp-nav ${open ? 'open' : ''}`}>
           <a href="/about_us" className="vp-nav-link">ABOUT US</a>
-          <a href="/our_values" className="vp-nav-link active">OUR VALUES</a>
+          <a href="/our_values" className="vp-nav-link ">OUR VALUES</a>
           <a href="/our_business" className="vp-nav-link">OUR BUSINESSES</a>
           <a href="/our_impact" className="vp-nav-link">OUR IMPACT</a>
         </nav>
@@ -27,11 +28,11 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <button className="vp-hamburger" onClick={() => setOpen(s => !s)} aria-label="Toggle menu">
+          {/* <button className="vp-hamburger" onClick={() => setOpen(s => !s)} aria-label="Toggle menu">
             <span className="vp-hamburger-bar" />
             <span className="vp-hamburger-bar" />
             <span className="vp-hamburger-bar" />
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -39,7 +40,7 @@ const Navbar = () => {
       {open && (
         <div className="vp-mobile-menu">
           <a href="/about_us" className="vp-mobile-link">ABOUT US</a>
-          <a href="/our_values" className="vp-mobile-link active">OUR VALUES</a>
+          <a href="/our_values" className="vp-mobile-link ">OUR VALUES</a>
           <a href="/our_business" className="vp-mobile-link">OUR BUSINESSES</a>
           <a href="/our_impact" className="vp-mobile-link">OUR IMPACT</a>
         </div>
