@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import logo from '../assets/vendor-portal-ui/src/assets/Tolaram-logo-white-inflection-red.png';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
       <div className="vp-navbar-inner">
         <div className="vp-brand">
           {/* Replace with <img src="/logo.png" alt="Tolaram" /> if you have an image in public/ */}
-          <img src="vendor-portal-ui/src/Tolaram-logo-white-inflection-red.png" alt="Tolaram" className="vp-logo-image" />
+          <img src={logo} alt="Tolaram" className="vp-logo-image" />
           <span className="vp-logo-text"></span>
         </div>
 
@@ -20,7 +21,7 @@ const Navbar = () => {
           <a href="/our_impact" className="vp-nav-link">OUR IMPACT</a>
         </nav>
 
-        <div className="vp-actions">
+        {/* <div className="vp-actions">
           <button className="vp-search-btn" aria-label="Search">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M11 19a8 8 0 1 1 5.293-14.293A8 8 0 0 1 11 19z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -28,12 +29,12 @@ const Navbar = () => {
             </svg>
           </button>
 
-          {/* <button className="vp-hamburger" onClick={() => setOpen(s => !s)} aria-label="Toggle menu">
+          <button className="vp-hamburger" onClick={() => setOpen(s => !s)} aria-label="Toggle menu">
             <span className="vp-hamburger-bar" />
             <span className="vp-hamburger-bar" />
             <span className="vp-hamburger-bar" />
-          </button> */}
-        </div>
+          </button>
+        </div> */}
       </div>
 
       {/* Mobile menu — simple dropdown */}
