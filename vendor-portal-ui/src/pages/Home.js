@@ -3,6 +3,7 @@ import VendorList from '../components/VendorList';
 import AddVendorForm from '../components/AddVendorForm';
 import vendorService from '../services/vendorService';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const [vendors, setVendors] = useState([]);
@@ -73,6 +74,7 @@ const Home = () => {
         onDelete={deleteVendorById}
         onUpdateStatus={updateVendorStatus}
       />
+      <Footer />
     </>
   );
 };

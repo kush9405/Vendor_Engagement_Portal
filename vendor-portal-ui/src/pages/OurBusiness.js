@@ -2,11 +2,22 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 
+
 const OurBusiness = () => {
+  const sectors = [
+'Consumer goods', 'Fintech', 'Infrastructure', 'Industrials'
+];
   return (
     <div>
         <Navbar />
-      Our BUSINESSES Page
+      
+      <section className="page container">
+      <h2>Our businesses</h2>
+      <p>We operate across multiple sectors with deep market knowledge in emerging markets.</p>
+      <ul className="business-list">
+      {sectors.map(s=> <li key={s}>{s}</li>)}
+      </ul>
+      </section>
     </div>
   )
 }
