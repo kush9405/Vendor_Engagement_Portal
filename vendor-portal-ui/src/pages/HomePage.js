@@ -47,6 +47,23 @@ const HomePage = () => {
         </div>
       </section>
     </div>
+        <section className="future-section">
+      <div className="container future-grid">
+        <div className="image-column">
+          <img 
+            src="tolaram-the-difference-2.jpg" // Using a placeholder URL for now
+            // src={historyImage} // Use this once you save the image locally
+            alt="The original Tailor Tolaram shop in Indonesia" 
+          />
+        </div>
+        <div className="text-column">
+          <h2>We have a track record of building long-term businesses in challenging terrains.</h2>
+          <p>
+            The relationships we nurture with our people, partners and communities are driven by time-honoured values.
+          </p>
+        </div>
+      </div>
+    </section>
     <Footer />
         </>
       );
