@@ -18,13 +18,12 @@ const Footer = () => {
   return (
     <footer className="vp-footer" role="contentinfo">
       <div className="vp-footer-inner">
-        {/* <div className="vp-footer-left">
+        <div className="vp-footer-left">
           <div className="vp-contact">Contact us at <a href="mailto:info@tolaram.com">info@tolaram.com</a></div>
         </div>
         <div className="vp-footer-right">
           <div className="vp-address"><strong>Tolaram</strong> 1A International Business Park, #13-01 Singapore 609933, T: (65) 6387 7777</div>
-        </div> */}
-        <div><span style="font-weight: bold;">Tolaram</span> 1A International Business Park, #13-01 Singapore 609933, <span style="white-space: nowrap;">T: (65) 6387 7777</span></div>
+        </div>
       </div>
 
       <button
