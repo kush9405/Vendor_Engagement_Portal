@@ -60,12 +60,29 @@ const AddVendorForm = ({ onVendorAdded }) => {
                     <input type="email" value={primaryContactEmail} onChange={e => setPrimaryContactEmail(e.target.value)} required />
                 </div>
                 <div className="form-group">
-                    <label>FMCG Category</label>
+                    <label>Category</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
-                        <option>Raw Materials</option>
-                        <option>Packaging</option>
-                        <option>Logistics</option>
-                        <option>Marketing</option>
+                        <option>Raw Materials (Wheat, Palm Oil)</option>
+                        <option>Logistics & Shipping</option>
+                        <option>Packaging Solutions</option>
+                        <option>Industrial Machinery & Automation</option>
+                        <option>IT & Cloud Infrastructure</option>
+                        <option>Audit & Professional Services</option>
+                        <option>Audit & Professional Services</option>
+                        <option>Marketing & Advertising</option>
+                        <option>Fintech Software Development</option>
+                        <option>European Distribution</option>
+                        <option>Cybersecurity Services</option>
+                        <option>HR & Payroll Systems</option>
+                        <option>Construction & Civil Engineering</option>
+                        <option>Food Ingredients & Flavoring</option>
+                        <option>Market Research & Consumer Insights</option>
+                        <option>Corporate Legal Services</option>
+                        <option>Energy & Fuel Supply</option>
+                        <option>Data Analytics & BI Solutions</option>
+                        <option>Payment Gateway Services</option>
+                        <option>Corporate Travel Management</option>
+                        <option>Facilities Management</option>
                     </select>
                 </div>
                 <button type="submit" className="submit" disabled={submitting}>

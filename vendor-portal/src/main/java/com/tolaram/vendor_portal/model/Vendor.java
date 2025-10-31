@@ -28,7 +28,7 @@ public class Vendor {
     private LocalDate registrationDate;
     private LocalDateTime lastInteractionDate;
     private LocalDate contractEndDate;
-    private double performanceRating;
+    private Double performanceRating;
 
     public enum EngagementStatus {
         YET_TO_RESPOND,
