@@ -1,5 +1,5 @@
 .delete-button{
-    background-color: #d32727;
+    background-color: #e4002b;
     color: white;
     border: none;
     padding: 8px 14px;
@@ -8,7 +8,7 @@
     font-size: 0.95em;
     transition: background-color 0.2s;
 }
-.delete-butto:hover:not(:disabled) {
+.delete-button:hover:not(:disabled) {
     background-color: #a12020;
 }
 .vendor-list-container {
