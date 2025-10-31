@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer';
 
 
 const OurBusiness = () => {
@@ -18,6 +19,7 @@ const OurBusiness = () => {
       {sectors.map(s=> <li key={s}>{s}</li>)}
       </ul>
       </section>
+      <Footer />
     </div>
   )
 }
