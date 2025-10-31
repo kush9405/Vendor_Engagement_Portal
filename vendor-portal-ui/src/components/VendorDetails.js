@@ -55,6 +55,7 @@ const VendorDetail = () => {
                         <option value="COMPLETED_ONBOARDED">Completed / Onboarded</option>
                     </select>
                 </div>
+                Past Orders:
             </div>
         </div>
     );
