@@ -15,10 +15,10 @@ const Navbar = () => {
         <nav className={`vp-nav ${open ? 'open' : ''}`} aria-label="Primary">
           <a href="/" className="vp-nav-link">HOME</a>
           <a href="/vendors" className="vp-nav-link">VENDORS</a>
-          <a href="/about_us" className="vp-nav-link">ABOUT US</a>
-          <a href="/our_values" className="vp-nav-link ">OUR VALUES</a>
-          <a href="/our_business" className="vp-nav-link">OUR BUSINESSES</a>
-          <a href="/our_impact" className="vp-nav-link">OUR IMPACT</a>
+          <a href="/about-us" className="vp-nav-link">ABOUT US</a>
+          <a href="/our-values" className="vp-nav-link ">OUR VALUES</a>
+          <a href="/our-business" className="vp-nav-link">OUR BUSINESSES</a>
+          <a href="/our-impact" className="vp-nav-link">OUR IMPACT</a>
         </nav>
 
         <div className="vp-actions">
@@ -40,10 +40,10 @@ const Navbar = () => {
         <div className="vp-mobile-menu">
           <a href="/" className="vp-mobile-link">HOME</a>
           <a href="/vendors" className="vp-mobile-link">VENDORS</a>
-          <a href="/about_us" className="vp-mobile-link">ABOUT US</a>
-          <a href="/our_values" className="vp-mobile-link">OUR VALUES</a>
-          <a href="/our_business" className="vp-mobile-link">OUR BUSINESSES</a>
-          <a href="/our_impact" className="vp-mobile-link">OUR IMPACT</a>
+          <a href="/about-us" className="vp-mobile-link">ABOUT US</a>
+          <a href="/our-values" className="vp-mobile-link">OUR VALUES</a>
+          <a href="/our-business" className="vp-mobile-link">OUR BUSINESSES</a>
+          <a href="/our-impact" className="vp-mobile-link">OUR IMPACT</a>
         </div>
       )}
     </header>
