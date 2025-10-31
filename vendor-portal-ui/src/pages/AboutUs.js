@@ -7,11 +7,18 @@ const AboutUs = () => {
   return (
     <div>
         <Navbar />
-        <section className="page container">
-          <h2>About us</h2>
-          <p>Founded in 1948, Tolaram began in Indonesia and over the decades has expanded into manufacturing, distribution and investment across geographies. We focus on building enduring businesses that serve local markets.</p>
-          <p>Headquartered in Singapore with operations across Asia, Africa, and beyond.</p>
-        </section>
+
+    <div className="page-container">
+      <section className="page-hero" style={{backgroundImage: "url('/path/to/about-hero.jpg')"}}>
+        <h1>About Us</h1>
+      </section>
+      <section className="container page-section">
+        <h2>Our Vision & Mission</h2>
+        <p>Content about vision and mission goes here...</p>
+        <h2>Our History</h2>
+        <p>Content about history goes here...</p>
+      </section>
+    </div>
         <Footer />
     </div>
   )
