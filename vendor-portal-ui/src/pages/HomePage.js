@@ -13,6 +13,7 @@ const HomePage = () => {
         {/* <video autoPlay loop muted className="hero-video">
           <source src="/path/to/your/video.mp4" type="video/mp4" />
         </video> */}
+        <img src="/Tolaram-Shop-Malangi" alt="Hero" className="hero-image" />
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>We are Tolaram</h1>
