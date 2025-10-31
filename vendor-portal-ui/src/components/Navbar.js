@@ -13,7 +13,8 @@ const Navbar = () => {
         </div>
 
         <nav className={`vp-nav ${open ? 'open' : ''}`} aria-label="Primary">
-          <a href="/" className="vp-nav-link">VENDORS</a>
+          <a href="/" className="vp-nav-link">HOME</a>
+          <a href="/vendors" className="vp-nav-link">VENDORS</a>
           <a href="/about_us" className="vp-nav-link">ABOUT US</a>
           <a href="/our_values" className="vp-nav-link ">OUR VALUES</a>
           <a href="/our_business" className="vp-nav-link">OUR BUSINESSES</a>
@@ -37,7 +38,8 @@ const Navbar = () => {
       {/* Mobile dropdown (keeps focus/semantics simple) */}
       {open && (
         <div className="vp-mobile-menu">
-          <a href="/" className="vp-mobile-link">VENDORS</a>
+          <a href="/" className="vp-mobile-link">HOME</a>
+          <a href="/vendors" className="vp-mobile-link">VENDORS</a>
           <a href="/about_us" className="vp-mobile-link">ABOUT US</a>
           <a href="/our_values" className="vp-mobile-link">OUR VALUES</a>
           <a href="/our_business" className="vp-mobile-link">OUR BUSINESSES</a>
