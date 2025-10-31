@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import VendorDetails from './components/VendorDetails';
 import './App.css';
 import Vendors from './pages/Vendors';
@@ -22,6 +23,7 @@ function App() {
           <Route path="/our-values" element={<OurValues />} />
           <Route path="/vendor/:id" element={<VendorDetails />} />
         </Routes>
+        <SpeedInsights />
       </div>
   );
 }
