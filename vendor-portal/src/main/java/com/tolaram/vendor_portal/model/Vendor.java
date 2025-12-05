@@ -22,6 +22,7 @@ public class Vendor {
     private String phoneNumber;
     private String address;
     private String category;
+    private String newField;
 
     private EngagementStatus engagementStatus;
 
