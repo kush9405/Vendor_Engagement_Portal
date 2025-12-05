@@ -22,7 +22,7 @@ public class Vendor {
     private String phoneNumber;
     private String address;
     private String category;
-    private String newField;
+    private String primaryNewField;
 
     private EngagementStatus engagementStatus;
 
