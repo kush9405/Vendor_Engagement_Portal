@@ -6,7 +6,7 @@ const AddVendorForm = ({ onVendorAdded }) => {
     const [companyName, setCompanyName] = useState('');
     const [primaryContactName, setPrimaryContactName] = useState('');
     const [primaryContactEmail, setPrimaryContactEmail] = useState('');
-    const [primaryNewField, setprimaryNewField] = useState('');
+    const [primaryNewField, setPrimaryNewField] = useState('');
     const [category, setCategory] = useState('Raw Materials');
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState(null);
@@ -32,7 +32,7 @@ const AddVendorForm = ({ onVendorAdded }) => {
                 setCompanyName('');
                 setPrimaryContactName('');
                 setPrimaryContactEmail('');
-                setprimaryNewField('');
+                setPrimaryNewField('');
                 if (onVendorAdded) {
                     onVendorAdded();
                 }
@@ -64,7 +64,7 @@ const AddVendorForm = ({ onVendorAdded }) => {
                 </div>
                 <div className="form-group">
                     <label>New Field</label>
-                    <input type="text" value={primaryNewField} onChange={e => setprimaryNewField(e.target.value)} required />
+                    <input type="text" value={primaryNewField} onChange={e => setPrimaryNewField(e.target.value)} required />
                 </div>
                 <div className="form-group">
                     <label>Category</label>
@@ -92,7 +92,6 @@ const AddVendorForm = ({ onVendorAdded }) => {
                         <option>Facilities Management</option>
                     </select>
                 </div>
-
                 <button type="submit" className="submit" disabled={submitting}>
                     {submitting ? 'Submitting...' : 'Add Vendor'}
                 </button>
